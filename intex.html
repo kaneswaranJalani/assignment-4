@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes marquee {
+            from { transform: translateX(100%); 
+            }
+            to { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 7s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <!--section 1-->
+    <div>
+        <nav class="fixed top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
+          
+            <div class="text-white flex justify-between items-center">
+                <div class="text-3xl font-bold text-white">
+                       Jala shop
+                </div>
+                <ul class="md:flex space-x-7 text-xl font-bold">
+                    <li><a href="intex.html" class=" text-white hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#services" class="hover:underline">Services</a></li>
+                    <li><a href="#product" class="hover:underline">protect</a></li>
+                    <li><a href="#team" class="hover:underline">team</a></li>
+                    <li>
+                        <div class="relative inline-block text-left">
+                            <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
+                            <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
+                                <a href="contact.html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">page</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="" class="hover:underline">contact</a></li>
+                    <li>  <a href="#" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+      </div>
+     </div>
+     <!--extra 1-->
+     
+        <div class="relative h-[500px] w-full bg-center bg-cover" style="background-image:url(/home/uki/Desktop/assignment4/assest2/image/pic11.jpg) ;">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="absolute flex inset-0 justify-center items-center text-white text-7xl font-bold"> welcome to our page</div>
+        </div>
+    
+     <!--section 2-->
+     <div>
+     <div class="bg-gray-100 p-25 grid grid-cols-1 md:grid-cols-2 gap-5 ">
+        <div>
+            <img src="./assest2/image/Screenshot from 2025-03-01 07-00-33.png" alt="photo 1">
+            </div>
+            <div>
+        <h1 class="text-5xl text-gray-700 font-bold">Better digital experience <br>with web Jala</h1>
+        <p class="font-bold text-xl italic mt-6">We are team of taiented designers making websites with tailwind</p>
+        <button class="text-white font-bold bg-blue-600 rounded-lg px-3 py-2 mt-4 hover:text-black hover:bg-blue-400">get stared</button>
+    </div>
+        
+     </div>
+    </div>
+    <!--section 4-->
+    <section id="product">
+    <div class="bg-white grid justify-items-center 8 h-screen overflow-auto">
+        <button class="bg-pink-100 text-pink-700 text-xl font-bold px-3 py-2 rounded-lg mt-4">our products</button>
+        <h1 class="text-5xl font-bold text-black mt-4">Check out our beautiful products</h1>
+        <ul class="text-black font-bold flex space-x-3 mt-4">
+            <li><a href="#"class="hover:text-orange-500">All</a></li>
+            <li><a href="#"class="hover:text-orange-500">App</a></li>
+            <li><a href="#"class="hover:text-orange-500">Card</a></li>
+            <li><a href="#"class="hover:text-orange-500">Web</a></li>
+        </ul>
+        <div class="container mx-auto px-5:px-20 grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+            <img class="h-130 w-100 rounded-lg shadow-xl" src="./assest2/image/w1.jpeg" alt="p1">
+            <a href="jala.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w2.jpeg" alt="p2"></a>
+            <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w3.jpeg" alt="p3">
+            <a href="jala2.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men1.jpeg" alt="p4"></a>
+            <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men2.jpeg" alt="p5">
+            <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men3.jpeg" alt="p6">
+            <a href="jala3.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men4.jpeg" alt="p7"></a>
+            <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w4.jpeg" alt="p8">
+            <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w5.jpeg" alt="p9">
+            
+    </div>
+    </div>
+    </section>
+    <!--section 5-->
+    <div class="bg-gray-100 ">
+        <div class="text-center py-10">
+            <button class="bg-orange-200 text-orange-800 text-xl px-3 py-1 rounded-lg">Team</button>
+            <h1 class="text-black text-5xl font-bold">Our team is always here to help</h1>
+        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-10 py-10">
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                 
+                    <img src="./assest2/image/image 1.jpg" alt="human 1" class="rounded-lg w-full h-90 object-cover">
+                
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-4">
+               
+                     <img src="./assest2/image/image 3.jpg" alt="human 2" class="rounded-lg w-full h-90 object-cover">
+                
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-4">
+                
+                    <img src="./assest2/image/image 2.jpg" alt="human 3" class="rounded-lg w-full h-90 object-cover">
+               
+                 </div>
+                 <div class="bg-white shadow-lg rounded-lg p-4">
+               
+                    <img src="./assest2/image/images 5.jpg" alt="human 4" class="rounded-lg w-full h-90 object-cover">
+              
+                 </div>
+            </div>
+    </div>
+    <!--section 6-->
+        <div class="flex items-center h-150 bg-gray-200 overflow-hidden w-full">
+        <div class="bg-white w-full overflow-hidden whitespace-nowrap">
+            <div class="text-center py-10">
+                <button class="bg-orange-200 text-orange-800 text-xl px-3 py-1 rounded-lg">Clients</button>
+                <h1 class="text-black text-5xl mt-5">They trusted us</h1>
+            </div>
+            <div class="container mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-10 gap-5 py-10">
+                <img src="./assest2/image/logo1.png" alt="logo 1"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo3.png" alt="logo 3"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo4.png" alt="logo 4"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo5.png" alt="logo 5"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo6.png" alt="logo 6"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo7.png" alt="logo 7"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo8.png" alt="logo 8"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo9.png" alt="logo 9"class="inline-block animate-marquee">
+                <img src="./assest2/image/logo10.png" alt="logo 10"class="inline-block animate-marquee">
+            </div>
+            </div>
+            </div>
+    <!--section 7-->
+    <div>
+        <footer class="bg-slate-950 text-white">
+            <div class=" container mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-10 py-10">
+                <div>
+            <h2 class="text-3xl text-white text-bold">
+                <span class="text-orange-500">web</span>Amigo
+            </h2>
+                <ul class="text-white text-xl mt-4">
+                    <li>123,achchelu,Neervely</li>
+                    <li>+94 123 456 789</li>
+                    <li>kaneswaranjalani@gmail.com</li>
+                </ul>
+                </div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Useful Links</h3>
+                <ul class="mt-3 space-y-2 text-xl mt-4 space-x-3">
+                    <li> <a href="#" class="hover:text-orange-500"> > home </a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > About us </a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Our services</a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Teams & Services</a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Privacy policy </a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Our Services</h3>
+                <ul class="mt-3 space-y-2 text-xl mt-4 space-y-3">
+                    <li> <a href="#" class="hover:text-orange-500"> > web despt </a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Product management </a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Markecting</a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Grapic Design</a></li>
+                    <li> <a href="#" class="hover:text-orange-500"> > Web development </a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Our Social Services</h3>
+                <p class="text-xl mt-4">This is our social services</p>
+                <div class="flex space-x-3 mt-4">
+                    <a href="#" class="p-2 bg-gray-700 rounded-full">
+                        <img src="./assest2/image/twitter.jpg"
+                            alt="twitter" class="w-5 h-5"></a>
+                    <a href="#" class="p-2 bg-gray-700 rounded-full">
+                        <img src="./assest2/image/facebook.jpg"
+                            alt="facebook" class="w-5 h-5"></a>
+                    <a href="#" class="p-2 bg-gray-700 rounded-full">
+                        <img src="./assest2/image/youtube.jpg"
+                            alt="youtube" class="w-5 h-5"></a>
+                    <a href="#" class="p-2 bg-gray-700 rounded-full">
+                        <img src="./assest2/image/linkedin.jpg"
+                            alt="linkedin" class="w-5 h-5"></a>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("dropdownButton").addEventListener("click", function () {
+          document.getElementById("dropdownMenu").classList.toggle("hidden");
+        });
+      </script>
+      
+   
+</body>
+</html>
