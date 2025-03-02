@@ -3,51 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-     
-    <!--login page-->
-    <div class="flex items-center justify-center min-h-screen bg-cover bg-center relative" style="background-image: url('/home/uki/Desktop/assignment4/assest2/image/pic11.jpg');">
+ <!--section 1-->
+ <div>
+    <nav class="fixed top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
+      
+        <div class="text-white flex justify-between items-center">
+            <div class="text-3xl font-bold text-white">
+                   perfume
+                   
+            </div>
+            <ul class="md:flex space-x-7 text-xl font-bold">
+                <li><a href="intex.html" class=" text-white hover:underline">Home</a></li>
+                <li><a href="intex.html#about" class="hover:underline">About</a></li>
+                <li><a href="intex.html#services" class="hover:underline">Services</a></li>
+                <li><a href="intex.html#product" class="hover:underline">protect</a></li>
+                <li><a href="intex.html#team" class="hover:underline">team</a></li>
+                <li>
+                    <div class="relative inline-block text-left">
+                        <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
+                        <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
+                            <a href="contact.html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="" class="hover:underline">contact</a></li>
+                <li>  <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">login</a></li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+ </div>
+    <!-- Login page -->
+    <div class="flex items-center justify-center min-h-screen bg-cover bg-center relative" style="background-image: url('./assest2/image/pic11.jpg');">
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
-    
+
         <!-- Login Form Container -->
         <div class="relative bg-white shadow-xl rounded-2xl grid justify-items-center py-10 w-full max-w-xl mx-auto px-6">
             <h1 class="font-bold text-5xl py-5 text-center">Login Form</h1>
-            
+
             <div class="flex space-x-4 mt-4 font-bold text-xl">
-                <button class="bg-blue-200 px-4 py-2 text-black hover:bg-blue-600 transition rounded-lg">
-                    <a href="#">Login</a>
+                <button id="loginBtn" class="bg-blue-200 px-4 py-2 text-black hover:bg-blue-600 transition rounded-lg">
+                    Login
                 </button>
-                <button class="bg-blue-200 px-4 py-2 text-black hover:bg-blue-600 transition rounded-lg">
-                    <a href="#">Sign Up</a>
+                <button id="signupBtn" class="bg-blue-200 px-4 py-2 text-black hover:bg-blue-600 transition rounded-lg">
+                    Sign Up
                 </button>
             </div>
-    
-            <form class="mt-8 w-4/5">
+
+            <!-- Login Form -->
+            <form id="loginForm" class="mt-8 w-4/5">
                 <div>
                     <label class="block text-xl font-bold text-gray-700">Email</label>
                     <input type="email" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-400 focus:outline-none" placeholder="Enter your email">
                 </div>
-    
+
                 <div class="mt-4">
                     <label class="block text-xl font-bold text-gray-700">Password</label>
                     <input type="password" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-400 focus:outline-none" placeholder="Enter your password">
                 </div>
-    
-                <div class="mt-4">
-                    <label class="block text-xl font-bold text-gray-700">Confirm Password</label>
-                    <input type="password" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-400 focus:outline-none" placeholder="Confirm your password">
-                </div>
-            
-            <div class="text-right text-blue-600 mb-4"><a href="#">Forgot password?</a></div>
-            <button class="bg-blue-600 text-white font-bold px-6 py-2 rounded-full w-full hover:bg-blue-700 transition">Login</button>
-            <div class="text-center mt-4">Not a member? <a href="#" class="text-blue-600">Signup now</a></div>
-               </form>
 
-               <form action="#" class="signup mt-6 hidden">
+                <div class="text-right text-blue-600 mb-4"><a href="#">Forgot password?</a></div>
+                <button class="bg-blue-600 text-white font-bold px-6 py-2 rounded-full w-full hover:bg-blue-700 transition">Login</button>
+                <div class="text-center mt-4">Not a member? <a href="#" id="toggleSignup" class="text-blue-600">Signup now</a></div>
+            </form>
+
+            <!-- Signup Form (Initially Hidden) -->
+            <form id="signupForm" class="mt-8 w-4/5 hidden">
                 <div class="mb-4">
                     <label class="block text-xl font-bold text-gray-700">Email</label>
                     <input type="email" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-400 focus:outline-none" placeholder="Enter your email" required>
@@ -61,27 +87,46 @@
                     <input type="password" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring focus:ring-blue-400 focus:outline-none" placeholder="Confirm your password" required>
                 </div>
                 <button class="bg-blue-600 text-white font-bold px-6 py-2 rounded-full w-full hover:bg-blue-700 transition">Signup</button>
+                <div class="text-center mt-4">Already a member? <a href="#" id="toggleLogin" class="text-blue-600">Login now</a></div>
             </form>
         </div>
     </div>
-    <script>
-    const loginText = document.querySelector(".title-text .login");
-    const loginForm = document.querySelector("form.login");
-    const loginBtn = document.querySelector("label.login");
-    const signupBtn = document.querySelector("label.signup");
-    const signupLink = document.querySelector("form .signup-link a");
-    signupBtn.onclick = (()=>{
-      loginForm.style.marginLeft = "-50%";
-      loginText.style.marginLeft = "-50%";
-    });
-    loginBtn.onclick = (()=>{
-      loginForm.style.marginLeft = "0%";
-      loginText.style.marginLeft = "0%";
-    });
-    signupLink.onclick = (()=>{
-      signupBtn.click();
-      return false;
-    });
-</script>
 
+    <script>
+        const loginBtn = document.getElementById("loginBtn");
+        const signupBtn = document.getElementById("signupBtn");
+        const loginForm = document.getElementById("loginForm");
+        const signupForm = document.getElementById("signupForm");
+        const toggleSignup = document.getElementById("toggleSignup");
+        const toggleLogin = document.getElementById("toggleLogin");
+
+        loginBtn.addEventListener("click", () => {
+            loginForm.classList.remove("hidden");
+            signupForm.classList.add("hidden");
+        });
+
+        signupBtn.addEventListener("click", () => {
+            signupForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+        });
+
+        toggleSignup.addEventListener("click", (e) => {
+            e.preventDefault();
+            signupForm.classList.remove("hidden");
+            loginForm.classList.add("hidden");
+        });
+
+        toggleLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.classList.remove("hidden");
+            signupForm.classList.add("hidden");
+        });
+    </script>
+    <script>
+        document.getElementById("dropdownButton").addEventListener("click", function () {
+          document.getElementById("dropdownMenu").classList.toggle("hidden");
+        });
+      </script>
+
+</body>
 </html>
