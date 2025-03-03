@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+     <!--section 1-->
+ <div>
+    <nav class="fixed top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
+      
+        <div class="text-white flex justify-between items-center">
+            <div class="text-3xl font-bold text-white">
+                   perfume
+                   
+            </div>
+            <ul class="md:flex space-x-7 text-xl font-bold">
+                <li><a href="intex.html" class=" text-white hover:underline">Home</a></li>
+                <li><a href="intex.html#about" class="hover:underline">About</a></li>
+                <li><a href="intex.html#services" class="hover:underline">Services</a></li>
+                <li><a href="intex.html#product" class="hover:underline">product</a></li>
+                <li><a href="intex.html#team" class="hover:underline">team</a></li>
+                <li>
+                    <div class="relative inline-block text-left">
+                        <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
+                        <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
+                            <a href="feedback .html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="product.html" class="hover:underline">details</a></li>
+                <li>  <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">login</a></li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+ </div>
+    <!-- feedback page -->
+    <div class="flex items-center justify-center min-h-screen bg-cover bg-center relative" style="background-image: url('./assest2/image/pic11.jpg');">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- feedback Form Container -->
+        <div class="relative bg-white shadow-xl rounded-2xl grid justify-items-center py-10 w-full max-w-xl mx-auto px-6">
+            <h1 class="font-bold text-5xl py-5 text-center">feedback Form</h1>
+            <p class="font-bold text-5xl">what prevented you from complething your purchase today?</p>
+            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800 transition mt-8">Price was too high</button>
+            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800 transition mt-3">cost of shipping was to expensive </button>
+            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800 transition mt-3">There was lack payments</button>
+            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800 transition mt-3">I`m just researching right now</button>
+            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800 transition mt-3">Others</button>
+        </div>    
+            
+    
+</body>
+</html>
