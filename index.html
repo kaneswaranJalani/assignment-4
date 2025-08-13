@@ -3,255 +3,679 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 4</title>
+    <title>Perfume | Modern Fragrance Boutique</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @keyframes marquee {
-            from { transform: translateX(100%); 
-            }
-            to { transform: translateX(-100%); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
-        .animate-marquee {
-            animation: marquee 8s linear infinite;
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .scroll-hidden::-webkit-scrollbar {
+            display: none;
         }
     </style>
-    
 </head>
-<body>
-    <!--section 1-->
-    <div>
-        <nav class="fixed top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
-          
-            <div class="text-white flex justify-between items-center">
-                <div class="text-3xl font-bold text-white">
-                       perfume
-                       
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Modern Navbar -->
+    <nav class="fixed top-0 left-0 w-full glass-effect p-6 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold gradient-text">PERFUME</div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="./index.html" class="text-white hover:text-orange-300 transition">Home</a></li>
+                <li><a href="#about" class="text-white hover:text-orange-300 transition">About</a></li>
+                <li><a href="#services" class="text-white hover:text-orange-300 transition">Services</a></li>
+                <li><a href="#products" class="text-white hover:text-orange-300 transition">Products</a></li>
+                <li><a href="#team" class="text-white hover:text-orange-300 transition">Team</a></li>
+                <li class="relative group">
+                    <button class="text-white flex items-center space-x-1 focus:outline-none">
+                        <span>More</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-50">
+                        <a href="feedback.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Feedback</a>
+                        <a href="product.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Details</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="login.html" class="bg-gradient-to-r from-orange-500 to-pink-500 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg transition-all">Login</a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-gray-900 bg-opacity-95">
+            <div class="px-6 py-4 space-y-4">
+                <a href="./index.html" class="block text-white hover:text-orange-300">Home</a>
+                <a href="#about" class="block text-white hover:text-orange-300">About</a>
+                <a href="#services" class="block text-white hover:text-orange-300">Services</a>
+                <a href="#products" class="block text-white hover:text-orange-300">Products</a>
+                <a href="#team" class="block text-white hover:text-orange-300">Team</a>
+                <a href="feedback .html" class="block text-white hover:text-orange-300">Feedback</a>
+                <a href="product.html" class="block text-white hover:text-orange-300">Details</a>
+                <a href="login.html" class="block text-center bg-gradient-to-r from-orange-500 to-pink-500 px-6 py-2 rounded-full text-white font-medium mt-4">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax Effect -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <div 
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
+            style="background-image: url('./assest2/image/pic11.jpg');"
+            data-parallax="scroll"
+        ></div>
+        
+        <div class="relative z-20 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                <span class="gradient-text">Elevate Your Senses</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+                Discover luxury fragrances crafted with passion and precision
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-pink-500 hover:to-orange-500 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg">
+                    Shop Now
+                </a>
+                <a href="#about" class="bg-white/10 text-white px-8 py-3 rounded-full font-medium backdrop-blur-sm hover:bg-white/20 transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <a href="#about" class="text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="inline-block bg-pink-100 text-pink-800 px-4 py-1 rounded-full text-sm font-semibold">
+                        ABOUT US
+                    </span>
+                    <h2 class="text-4xl font-bold text-gray-900">
+                        Crafting <span class="gradient-text">Signature Scents</span> Since 2023
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        Our perfumes are more than just fragrances - they're memories in a bottle, crafted with the finest ingredients from around the world.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div class="text-orange-500 text-2xl mb-3">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Natural Ingredients</h3>
+                            <p class="text-gray-600">Sourced from sustainable farms worldwide</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div class="text-orange-500 text-2xl mb-3">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Expert Blending</h3>
+                            <p class="text-gray-600">Master perfumers with decades of experience</p>
+                        </div>
+                    </div>
+                    <button class="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all">
+                        Our Story
+                    </button>
                 </div>
-                <ul class="md:flex space-x-7 text-xl font-bold">
-                    <li><a href="./index.html" class=" text-white hover:underline">Home</a></li>
-                    <li><a href="index.html#about" class="hover:underline">About</a></li>
-                    <li><a href="index.html#services" class="hover:underline">Services</a></li>
-                    <li><a href="index.html#product" class="hover:underline">product</a></li>
-                    <li><a href="index.html#team" class="hover:underline">team</a></li>
-                    <li>
-                        <div class="relative inline-block text-left">
-                            <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
-                            <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
-                                <a href="feedback .html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">feedback</a>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl float-animation">
+                        <img src="./assest2/image/644424c3ff9446eb285229055eec41fc.jpg" alt="Perfume making" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold">Artisan Perfumery</h3>
+                            <p>Traditional meets modern</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg z-10 hidden md:block">
+                        <div class="flex items-center space-x-2">
+                            <div class="text-orange-500 text-2xl">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">2023 Fragrance Award</p>
+                                <p class="text-sm text-gray-600">Best New Brand</p>
                             </div>
                         </div>
-                    </li>
-                    <li><a href="product.html" class="hover:underline">details</a></li>
-                    <li>  <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">login</a></li>
-                </ul>
-            </div>
-        </nav>
-      </div>
-     </div>
-     <!--extra 1-->
-     
-        <div class="relative h-[500px] w-full bg-center bg-cover" style="background-image:url(/home/uki/Desktop/assignment4/assest2/image/pic11.jpg) ;">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="absolute flex inset-0 justify-center items-center text-white text-7xl font-bold"> welcome to our webpage</div>
-        </div>
-    
-     <!--section 2-->
-     <section id="about">
-     <div class="bg-sky-100 p-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 px-15 gap-10 py-10 m-10">
-            <div>
-            <h1 class="text-5xl text-gray-800 font-bold">Better digital experience <br>with web Jala</h1>
-           <p class="font-bold text-3xl italic mt-10">We are team of taiented designers making websites with tailwind</p>
-           <button class="text-white font-bold text-xl bg-orange-500 rounded-lg px-3 py-2 mt-10 hover:text-black hover:bg-orange-800">get stared</button>
-             </div>
-             <div>
-                <img  class="rounded-xl h-130"src="./assest2/image/644424c3ff9446eb285229055eec41fc.jpg" alt="photo 1">
-             </div>
-        </div>
-
-     </div>
-     </section>
-    <!--section 3-->
-    <section id="services">
-    <div class="bg-gray-200">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 py-10">
-        <img class="rounded-xl h-170"src="./assest2/image/section 3.jpeg" alt="photo" class="w-full">
-        <div>
-            <h1 class="text-7xl font-bold px-10 py-5">Our Services</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">
-                    <img class="rounded-xl" src="./assest2/image/scr1.png" alt="scr1">
-                <p> Xtra is the lightest theme on the market, providing unparalleled performance and the greatest search engine results.</p></div>
-                <div class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">
-                    <img class="rounded-xl" src="./assest2/image/scr2.png" alt="scr2">
-                <p class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">
-                    Purchase once and receive lifetime updates and additional features for free, no recurring fees!
-                </p></div>
-                <div class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">
-                    <img class="rounded-xl" src="./assest2/image/scr3.png" alt="scr3">
-                <p class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">Create and customize your website in real time, and see the results immediately with our unique preview mode. This will save you time!</p></div>
-                <div class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">
-                    <img class="rounded-xl" src="./assest2/image/scr4.png" alt="scr4">
-                <p class="text-gray-700 italic font-bold text-xl bg-white px-5 py-5 rounded-xl">Save time on website design by importing pixel-perfect, ready-to-use website demos from our extensive starting site collection.</p></div>
-            </div>
-        </div>
-    </div>
-    </div> 
-    </section>   
-    <!--section 4-->
-    <section id="product">
-        <div class="bg-white grid justify-items-center 8 h-screen overflow-auto">
-            <button class="bg-pink-100 text-red-800 text-xl font-bold px-3 py-2 rounded-lg mt-4">our products</button>
-            <h1 class="text-5xl font-bold text-black mt-4">Check out our beautiful products</h1>
-            <ul class="text-black font-bold  text-xl flex space-x-3 mt-4">
-                <li><a href="#"class="hover:text-orange-500">All</a></li>
-                <li><a href="#"class="hover:text-orange-500">Image</a></li>
-                <li><a href="#"class="hover:text-orange-500">App</a></li>
-                <li><a href="#"class="hover:text-orange-500">Card</a></li>
-                <li><a href="#"class="hover:text-orange-500">Web</a></li>
-            </ul>
-            <div class="container mx-auto px-5:px-20 grid grid-cols-3 md:grid-cols-3 gap-10 mt-10">
-                <img class="h-130 w-100 rounded-lg shadow-xl" src="./assest2/image/w1.jpeg" alt="p1">
-                <a href="jala.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w2.jpeg" alt="p2"></a>
-                <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w3.jpeg" alt="p3">
-                <a href="jala2.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men1.jpeg" alt="p4"></a>
-                <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men2.jpeg" alt="p5">
-                <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men3.jpeg" alt="p6">
-                <a href="jala3.html"><img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/men4.jpeg" alt="p7"></a>
-                <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w4.jpeg" alt="p8">
-                <img class="h-130 w-100 rounded-lg shadow-xl"src="./assest2/image/w5.jpeg" alt="p9">
-                
-        </div>
-        </div>
-        </section>
-    <!--section 5-->
-    <section id="team">
-    <div class="bg-gray-100 ">
-        <div class="text-center py-10">
-            <button class="bg-pink-200 text-red-800 text-xl px-3 py-1 rounded-lg font-bold">Team</button>
-            <h1 class="text-black text-5xl font-bold font-bold">Our team is always here to help</h1>
-        </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-10 py-10">
-                <div class="bg-white shadow-lg rounded-lg p-4">
-                 
-                    <img src="./assest2/image/image 1.jpg" alt="human 1" class="rounded-lg w-full h-90 object-cover">
-                
+                    </div>
                 </div>
-                <div class="bg-white shadow-lg rounded-lg p-4">
-               
-                     <img src="./assest2/image/image 3.jpg" alt="human 2" class="rounded-lg w-full h-90 object-cover">
-                
-                </div>
-                <div class="bg-white shadow-lg rounded-lg p-4">
-                
-                    <img src="./assest2/image/image 2.jpg" alt="human 3" class="rounded-lg w-full h-90 object-cover">
-               
-                 </div>
-                 <div class="bg-white shadow-lg rounded-lg p-4">
-               
-                    <img src="./assest2/image/images 5.jpg" alt="human 4" class="rounded-lg w-full h-90 object-cover">
-              
-                 </div>
             </div>
-    </div>
+        </div>
     </section>
-    <!--section 6-->
-        <div class="flex items-center h-150 bg-sky-200 overflow-hidden w-full">
-        <div class="bg-white w-full overflow-hidden whitespace-nowrap">
-            <div class="text-center py-10">
-                <button class="bg-pink-200 text-red-800 font-bold text-xl px-3 py-1 rounded-lg">Clients</button>
-                <h1 class="text-black text-5xl mt-5 font-bold">They trusted us</h1>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-pink-100 text-pink-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    OUR SERVICES
+                </span>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    More Than <span class="gradient-text">Just Fragrances</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We offer a complete sensory experience with services tailored to your unique preferences
+                </p>
             </div>
-            <div class="container mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-10 py-10">
-                <div class="flex space-x-16 animate-loop-scroll aria-hidden-true group-hover:paused">
-                <img src="./assest2/image/logo1.png" alt="logo 1"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo3.png" alt="logo 3"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo4.png" alt="logo 4"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo5.png" alt="logo 5"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo6.png" alt="logo 6"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo7.png" alt="logo 7"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo8.png" alt="logo 8"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo9.png" alt="logo 9"class="inline-block animate-marquee">
-                <img src="./assest2/image/logo10.png" alt="logo 10"class="inline-block animate-marquee">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative rounded-2xl overflow-hidden">
+                    <img src="./assest2/image/section 3.jpeg" alt="Perfume consultation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Personalized Fragrance Profiling</h3>
+                        <p class="mb-4">Discover scents that match your personality and lifestyle</p>
+                        <button class="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl hover-scale transition-all hover:shadow-md">
+                        <div class="text-orange-500 text-3xl mb-4">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Aromatherapy Blends</h3>
+                        <p class="text-gray-600">Custom essential oil combinations for wellness</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover-scale transition-all hover:shadow-md">
+                        <div class="text-orange-500 text-3xl mb-4">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Luxury Gift Packaging</h3>
+                        <p class="text-gray-600">Premium presentation for special occasions</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover-scale transition-all hover:shadow-md">
+                        <div class="text-orange-500 text-3xl mb-4">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Custom Scent Creation</h3>
+                        <p class="text-gray-600">Your signature scent, designed just for you</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl hover-scale transition-all hover:shadow-md">
+                        <div class="text-orange-500 text-3xl mb-4">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Seasonal Collections</h3>
+                        <p class="text-gray-600">Limited edition scents for every season</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-pink-100 text-pink-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    OUR COLLECTION
+                </span>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Explore Our <span class="gradient-text">Signature Scents</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Each fragrance tells a unique story - find the one that speaks to you
+                </p>
             </div>
+            
+            <!-- Product Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="px-5 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-medium">
+                    All
+                </button>
+                <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100">
+                    For Her
+                </button>
+                <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100">
+                    For Him
+                </button>
+                <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100">
+                    Unisex
+                </button>
+                <button class="px-5 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-gray-100">
+                    Limited Edition
+                </button>
             </div>
-    <!--section 7-->
-    <div>
-        <footer class="bg-slate-950 text-white">
-            <div class=" container mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-10 py-10">
-                <div>
-            <h2 class="text-3xl text-white text-bold">
-                <span class="text-orange-500">web</span>Amigo
+            
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover-scale">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="./assest2/image/w1.jpeg" alt="Floral Bouquet" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
+                            <i class="far fa-heart text-gray-400 hover:text-pink-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <span class="inline-block bg-pink-500 text-white text-xs px-2 py-1 rounded mb-2">BESTSELLER</span>
+                            <h3 class="text-white font-bold text-xl">Floral Bouquet</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <p class="text-gray-500">Eau de Parfum</p>
+                            </div>
+                            <div class="text-orange-500 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">$89.00</span>
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-full text-sm hover:bg-gray-700 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover-scale">
+                    <div class="relative overflow-hidden h-80">
+                        <a href="jala.html">
+                            <img src="./assest2/image/w2.jpeg" alt="Citrus Zest" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </a>
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
+                            <i class="far fa-heart text-gray-400 hover:text-pink-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mb-2">NEW</span>
+                            <h3 class="text-white font-bold text-xl">Citrus Zest</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <p class="text-gray-500">Eau de Toilette</p>
+                            </div>
+                            <div class="text-orange-500 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">$75.00</span>
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-full text-sm hover:bg-gray-700 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover-scale">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="./assest2/image/men1.jpeg" alt="Woody Noir" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-sm">
+                            <i class="far fa-heart text-gray-400 hover:text-pink-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-white font-bold text-xl">Woody Noir</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <p class="text-gray-500">Eau de Parfum</p>
+                            </div>
+                            <div class="text-orange-500 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">$95.00</span>
+                            <button class="bg-gray-900 text-white px-4 py-2 rounded-full text-sm hover:bg-gray-700 transition">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-900 hover:text-white transition-all">
+                    View All Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-pink-100 text-pink-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    OUR TEAM
+                </span>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Meet The <span class="gradient-text">Master Noses</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our team of expert perfumers brings decades of experience in crafting exceptional fragrances
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale transition-all">
+                    <img src="./assest2/image/image 1.jpg" alt="Sophie Laurent" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-2xl mb-1">Sophie Laurent</h3>
+                        <p class="text-orange-300 mb-4">Master Perfumer</p>
+                        <p class="text-white/80 mb-4">With over 20 years in Grasse, Sophie creates our floral compositions</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale transition-all">
+                    <img src="./assest2/image/image 3.jpg" alt="Marcus Chen" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-2xl mb-1">Marcus Chen</h3>
+                        <p class="text-orange-300 mb-4">Fragrance Chemist</p>
+                        <p class="text-white/80 mb-4">Specializes in modern synthetic accords and innovative scent technologies</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale transition-all">
+                    <img src="./assest2/image/image 2.jpg" alt="Isabella Rossi" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-2xl mb-1">Isabella Rossi</h3>
+                        <p class="text-orange-300 mb-4">Creative Director</p>
+                        <p class="text-white/80 mb-4">Leads our visual storytelling and brand experience</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale transition-all">
+                    <img src="./assest2/image/images 5.jpg" alt="David Park" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-2xl mb-1">David Park</h3>
+                        <p class="text-orange-300 mb-4">Customer Experience</p>
+                        <p class="text-white/80 mb-4">Ensures every interaction with our brand is memorable</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-white hover:text-orange-300"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-white/10 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    TRUSTED BY
+                </span>
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    Featured In <span class="gradient-text">Prestigious Publications</span>
+                </h2>
+            </div>
+            
+            <div class="relative">
+                <div class="flex overflow-x-hidden scroll-hidden">
+                    <div class="flex space-x-16 animate-loop-scroll">
+                        <!-- Client Logos -->
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo1.png" alt="Vogue" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo3.png" alt="Elle" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo4.png" alt="GQ" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo5.png" alt="Harper's Bazaar" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo6.png" alt="Cosmopolitan" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo7.png" alt="Vanity Fair" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo8.png" alt="Allure" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo9.png" alt="W Magazine" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo10.png" alt="Marie Claire" class="h-12 opacity-70 hover:opacity-100 transition">
+                        </div>
+                    </div>
+                    <div class="flex space-x-16 animate-loop-scroll" aria-hidden="true">
+                        <!-- Duplicated for seamless looping -->
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo1.png" alt="Vogue" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo3.png" alt="Elle" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo4.png" alt="GQ" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo5.png" alt="Harper's Bazaar" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo6.png" alt="Cosmopolitan" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo7.png" alt="Vanity Fair" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo8.png" alt="Allure" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo9.png" alt="W Magazine" class="h-12 opacity-70">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="./assest2/image/logo10.png" alt="Marie Claire" class="h-12 opacity-70">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-r from-orange-50 to-pink-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                Join Our <span class="gradient-text">Fragrance Journey</span>
             </h2>
-                <ul class="text-white text-xl mt-4">
-                    <li>📍 123,achchelu,Neervely</li>
-                    <li>📞  +94 123 456 789</li>
-                    <li>📧  kaneswaranjalani@gmail.com</li>
-                </ul>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Subscribe to receive updates on new arrivals, exclusive offers, and scent tips from our perfumers
+            </p>
+            
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    class="flex-grow px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                >
+                <button 
+                    type="submit" 
+                    class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
+                >
+                    Subscribe
+                </button>
+            </form>
+            
+            <p class="text-sm text-gray-500 mt-4">
+                We respect your privacy. Unsubscribe at any time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="gradient-text">PERFUME</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Crafting exceptional fragrances that tell your story
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
                 </div>
-            <div>
-                <h3 class="text-xl font-bold text-white">Useful Links</h3>
-                <ul class="mt-3 space-y-2 text-xl mt-4 space-x-3">
-                    <li> <a href="#" class="hover:text-orange-500">  home </a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  About us </a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Our services</a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Teams & Services</a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Privacy policy </a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white">Our Services</h3>
-                <ul class="mt-3 space-y-2 text-xl mt-4 space-y-3">
-                    <li> <a href="#" class="hover:text-orange-500">  web despt </a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Product management </a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Markecting</a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Grapic Design</a></li>
-                    <li> <a href="#" class="hover:text-orange-500">  Web development </a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white">Our Social Services</h3>
-                <p class="text-xl mt-4">This is our social services</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" class="p-2 bg-gray-700 rounded-full">
-                        <img src="./assest2/image/twitter.jpg"
-                            alt="twitter" class="w-5 h-5"></a>
-                    <a href="#" class="p-2 bg-gray-700 rounded-full">
-                        <img src="./assest2/image/facebook.jpg"
-                            alt="facebook" class="w-5 h-5"></a>
-                    <a href="#" class="p-2 bg-gray-700 rounded-full">
-                        <img src="./assest2/image/youtube.jpg"
-                            alt="youtube" class="w-5 h-5"></a>
-                    <a href="#" class="p-2 bg-gray-700 rounded-full">
-                        <img src="./assest2/image/linkedin.jpg"
-                            alt="linkedin" class="w-5 h-5"></a>
-                    <a href="#" class="p-2 bg-gray-700 rounded-full">
-                         <img src="./assest2/image/instagram.svg"
-                            alt="instra" class="w-5 h-5"></a>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">All Fragrances</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">For Women</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">For Men</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gift Sets</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Travel Sizes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Ingredients</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Shipping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2023 PERFUME. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa" class="h-6 opacity-70">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard" class="h-6 opacity-70">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay" class="h-6 opacity-70">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal" class="h-6 opacity-70">
+                </div>
             </div>
-        </footer>
-    </div>
-    <!--section 8-->
-     <div>
-        <nav class="bg-sky-950 p-3 flex">
-            <div>
-                <h3 class="text-2xl text-white mr-25 px-6">copy right@,2025, all high resevered</h3>
-            </div>
-            <div>
-            <h3 class=" text-2xl text-white ml-230">uki,cohort 11,by:  K. jalani</h3>
-            </div>
-        </nav>
-     </div>
+        </div>
+    </footer>
+
     <script>
-        document.getElementById("dropdownButton").addEventListener("click", function () {
-          document.getElementById("dropdownMenu").classList.toggle("hidden");
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-      </script>
-      
-   
+
+        // Simple parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const parallaxElement = document.querySelector('[data-parallax="scroll"]');
+            if (parallaxElement) {
+                parallaxElement.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

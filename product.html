@@ -3,134 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail Slider</title>
+    <title>Luxury Perfume Collection | Product Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .swiper {
             width: 100%;
-            padding: 20px;
+            height: 100%;
         }
         .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 40px 0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!--section 1-->
-    <div>
-        <nav class="top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
-          
-            <div class="text-white flex justify-between items-center">
-                <div class="text-3xl font-bold text-white">
-                       perfume
-                       
-                </div>
-                <ul class="md:flex space-x-7 text-xl font-bold">
-                    <li><a href="./index.html" class=" text-white hover:underline">Home</a></li>
-                    <li><a href="#about" class="hover:underline">About</a></li>
-                    <li><a href="#services" class="hover:underline">Services</a></li>
-                    <li><a href="#product" class="hover:underline">product</a></li>
-                    <li><a href="#team" class="hover:underline">team</a></li>
-                    <li>
-                        <div class="relative inline-block text-left">
-                            <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
-                            <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
-                                <a href="feedback .html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">feedback</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="product.html" class="hover:underline">details</a></li>
-                    <li>  <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">login</a></li>
-                </ul>
-            </div>
-        </nav>
-      </div>
-     </div>
+<body class="bg-gray-50 font-sans">
+    <!-- Luxury Navbar -->
+    <nav class="fixed top-0 left-0 w-full glass-effect p-6 z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold gradient-text">PERFUME</div>
+            
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="./index.html" class="text-gray-800 hover:text-orange-500 transition">Home</a></li>
+                <li><a href="#about" class="text-gray-800 hover:text-orange-500 transition">About</a></li>
+                <li><a href="#services" class="text-gray-800 hover:text-orange-500 transition">Services</a></li>
+                <li><a href="#product" class="text-gray-800 hover:text-orange-500 transition">Collections</a></li>
+                <li><a href="#team" class="text-gray-800 hover:text-orange-500 transition">Craftsmanship</a></li>
+                <li class="relative group">
+                    <button class="flex items-center space-x-1 text-gray-800 hover:text-orange-500">
+                        <span>More</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-50">
+                        <a href="feedback .html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Feedback</a>
+                        <a href="product.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Details</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="login.html" class="bg-gradient-to-r from-orange-500 to-pink-500 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg transition-all">
+                        <i class="fas fa-user mr-2"></i> Account
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="md:hidden text-gray-800 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-    <!-- Swiper Slider -->
-    <div class="swiper">
+    <!-- Luxury Product Slider -->
+    <div class="swiper mt-20">
         <div class="swiper-wrapper">
 
-            <!-- Slide 1 -->
+            <!-- Slide 1 - Floral Bouquet -->
             <div class="swiper-slide">
-                <div class=" relative p-8 grid grid-cols-1 md:grid-cols-2">
-                    <div class="h-160 w-150">
-                        <img class="shadow-2xl rounded-2xl" src="./assest2/image/w2.jpeg" alt="detail 1">
+                <div class="max-w-7xl mx-auto p-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="flex justify-center hover-scale">
+                        <div class="relative h-[500px] w-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                            <img class="w-full h-full object-cover" src="./assest2/image/w2.jpeg" alt="Floral Bouquet Perfume">
+                            <div class="absolute top-4 right-4 bg-white/80 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+                                <i class="far fa-heart text-gray-600 hover:text-pink-500 cursor-pointer text-xl"></i>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                                <span class="inline-block bg-pink-500 text-white text-xs px-3 py-1 rounded-full mb-2">BESTSELLER</span>
+                                <h3 class="text-white text-2xl font-bold">Floral Bouquet</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid-cols-2">
-                        <div class="bg-gray-200 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-3xl mb-4">Product Information</h1>
-                            <hr>
-                            <ul class="font-bold text-xl mt-5">
-                                <li>Category: Web Design</li>
-                                <li>Client: ABC Company</li>
-                                <li>Project Date: 30 Sep 2023</li>
-                                <li>URL: www.example.com</li>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-3xl font-bold mb-6">Product Information</h1>
+                            <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start">
+                                    <i class="fas fa-tag text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Category:</strong> Women's Eau de Parfum</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Top Notes:</strong> Bergamot, Mandarin, Peach</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-heart text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Heart Notes:</strong> Jasmine, Rose, Lily of the Valley</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tree text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Base Notes:</strong> Sandalwood, Vanilla, Musk</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="bg-gray-100 mt-5 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-5xl mt-5">This is an example for product detail</h1>
-                            <p class="font-bold text-xl italic text-gray-500 mt-5">
-                                Echoing its inspiring character, the Miss Dior fragrance is like an olfactory “millefiori”. 
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-4xl font-bold mb-6 gradient-text">Floral Bouquet</h1>
+                            <p class="text-xl text-gray-600 mb-6 italic">
+                                "Echoing its inspiring character, the Miss Dior fragrance is like an olfactory millefiori. A kaleidoscope of flowers radiates its beauty in a grand floral bouquet."
                             </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl font-bold">$89.00</span>
+                                <button class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all">
+                                    Add to Cart <i class="fas fa-shopping-bag ml-2"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- Slide 2 - Woody Noir -->
             <div class="swiper-slide">
-                <div class="bg-sky-100 p-8 grid grid-cols-1 md:grid-cols-2">
-                    <div class="h-160 w-150">
-                        <img class="shadow-2xl rounded-2xl" src="./assest2/image/men1.jpeg" alt="detail 2">
+                <div class="max-w-7xl mx-auto p-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="flex justify-center hover-scale">
+                        <div class="relative h-[500px] w-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                            <img class="w-full h-full object-cover" src="./assest2/image/men1.jpeg" alt="Woody Noir Perfume">
+                            <div class="absolute top-4 right-4 bg-white/80 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+                                <i class="far fa-heart text-gray-600 hover:text-pink-500 cursor-pointer text-xl"></i>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                                <span class="inline-block bg-blue-500 text-white text-xs px-3 py-1 rounded-full mb-2">NEW</span>
+                                <h3 class="text-white text-2xl font-bold">Woody Noir</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid-cols-2">
-                        <div class="bg-gray-200 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-3xl mb-4">Product Information</h1>
-                            <hr>
-                            <ul class="font-bold text-xl mt-5">
-                                <li>Category: Web Design</li>
-                                <li>Client: Art Company</li>
-                                <li>Project Date: 16 Sep 2023</li>
-                                <li>URL: www.example2.com</li>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-3xl font-bold mb-6">Product Information</h1>
+                            <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start">
+                                    <i class="fas fa-tag text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Category:</strong> Men's Eau de Parfum</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Top Notes:</strong> Grapefruit, Cardamom, Lavender</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-heart text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Heart Notes:</strong> Geranium, Cedar, Amber</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tree text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Base Notes:</strong> Leather, Tonka Bean, Patchouli</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="bg-gray-100 mt-5 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-5xl mt-5">This is an example for product detail</h1>
-                            <p class="font-bold text-xl italic text-gray-500 mt-5">
-                                Versace Eros Eau de Parfum is the perfect fragrance for confident men.
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-4xl font-bold mb-6 gradient-text">Woody Noir</h1>
+                            <p class="text-xl text-gray-600 mb-6 italic">
+                                "Versace Eros Eau de Parfum is the perfect fragrance for confident men. A luminous freshness with oriental and woody accords creates a vibrant, intense scent."
                             </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl font-bold">$95.00</span>
+                                <button class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all">
+                                    Add to Cart <i class="fas fa-shopping-bag ml-2"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 3 -->
+            <!-- Slide 3 - Citrus Zest -->
             <div class="swiper-slide">
-                <div class="bg-orange-100 h-full grid grid-cols-1 md:grid-cols-2">
-                    <div class="h-160 w-150">
-                        <img class="shadow-2xl rounded-2xl" src="./assest2/image/men4.jpeg" alt="detail 3">
+                <div class="max-w-7xl mx-auto p-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="flex justify-center hover-scale">
+                        <div class="relative h-[500px] w-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                            <img class="w-full h-full object-cover" src="./assest2/image/men4.jpeg" alt="Citrus Zest Perfume">
+                            <div class="absolute top-4 right-4 bg-white/80 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+                                <i class="far fa-heart text-gray-600 hover:text-pink-500 cursor-pointer text-xl"></i>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                                <span class="inline-block bg-green-500 text-white text-xs px-3 py-1 rounded-full mb-2">LIMITED</span>
+                                <h3 class="text-white text-2xl font-bold">Citrus Zest</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="grid-cols-2">
-                        <div class="bg-gray-200 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-3xl mb-4">Product Information</h1>
-                            <hr>
-                            <ul class="font-bold text-xl mt-5">
-                                <li>Category: Web Design</li>
-                                <li>Client: ABC Company</li>
-                                <li>Project Date: 1 Jan 2023</li>
-                                <li>URL: www.example3.com</li>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-3xl font-bold mb-6">Product Information</h1>
+                            <div class="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start">
+                                    <i class="fas fa-tag text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Category:</strong> Unisex Cologne</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Top Notes:</strong> Lemon, Orange, Bergamot</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-heart text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Heart Notes:</strong> Neroli, Ginger, Rosemary</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tree text-orange-500 mt-1 mr-3"></i>
+                                    <span><strong class="text-gray-800">Base Notes:</strong> Oakmoss, Musk, Amber</span>
+                                </li>
                             </ul>
                         </div>
-                        <div class="bg-gray-100 mt-5 py-10 px-10 shadow-xl rounded-2xl">
-                            <h1 class="font-bold text-5xl mt-5">This is an example for product detail</h1>
-                            <p class="font-bold text-xl italic text-gray-500 mt-5">
-                                Creed is a luxury fragrance house known for its handcrafted perfumes.
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale">
+                            <h1 class="text-4xl font-bold mb-6 gradient-text">Citrus Zest</h1>
+                            <p class="text-xl text-gray-600 mb-6 italic">
+                                "Creed is a luxury fragrance house known for its handcrafted perfumes. This vibrant citrus composition evokes sun-drenched Mediterranean groves with sparkling freshness."
                             </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl font-bold">$120.00</span>
+                                <button class="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all">
+                                    Add to Cart <i class="fas fa-shopping-bag ml-2"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,20 +247,81 @@
         </div> <!-- Closing the swiper-wrapper -->
 
         <!-- Navigation Buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- Pagination Dots -->
+        <div class="swiper-button-next bg-white/80 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-white transition-all"></div>
+        <div class="swiper-button-prev bg-white/80 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-white transition-all"></div>
+        
+        <!-- Pagination -->
         <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Luxury Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 gradient-text">PERFUME</h3>
+                <p class="text-gray-400 mb-4">
+                    Crafting exceptional fragrances that tell your story since 1975.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Shop</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">All Fragrances</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Best Sellers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Gift Sets</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">About</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Our Story</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Ingredients</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Press</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Customer Care</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Contact Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">FAQs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Shipping</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-orange-400 transition">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2023 PERFUME. All rights reserved. | Designed with <i class="fas fa-heart text-pink-500"></i> by PERFUME Team
+        </div>
+    </footer>
+
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".swiper", {
             loop: true,
             autoplay: {
-                delay: 4000,
-                disableOnInteraction: false
+                delay: 5000,
+                disableOnInteraction: false,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -161,9 +330,11 @@
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + ' bg-gradient-to-r from-orange-500 to-pink-500"></span>';
+                },
             },
         });
     </script>
-
 </body>
 </html>

@@ -3,60 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Feedback | Luxury Perfume Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        .option-card {
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body>
-     <!--section 1-->
- <div>
-    <nav class="fixed top-0 left-0 w-full bg-slate-800 p-10 border-b border-black text-left shadow-md z-50">
-      
-        <div class="text-white flex justify-between items-center">
-            <div class="text-3xl font-bold text-white">
-                   perfume
-                   
-            </div>
-            <ul class="md:flex space-x-7 text-xl font-bold">
-                <li><a href="index.html" class=" text-white hover:underline">Home</a></li>
-                <li><a href="index.html#about" class="hover:underline">About</a></li>
-                <li><a href="index.html#services" class="hover:underline">Services</a></li>
-                <li><a href="index.html#product" class="hover:underline">product</a></li>
-                <li><a href="index.html#team" class="hover:underline">team</a></li>
-                <li>
-                    <div class="relative inline-block text-left">
-                        <button class="text-white rounded-md hover:bg-orange-500 focus:outline-black px-2" id="dropdownButton">drop down ▼</button>
-                        <div class="absolute hidden mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden border border-gray-200" id="dropdownMenu">
-                            <a href="feedback .html" class="block px-4 py-2 text-gray-700 font-bold hover:bg-gray-100">feedback</a>
-                        </div>
+<body class="font-sans antialiased">
+    <!-- Luxury Navbar -->
+    <nav class="fixed top-0 left-0 w-full glass-effect p-6 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold gradient-text">PERFUME</div>
+            
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="index.html" class="text-white hover:text-orange-300 transition">Home</a></li>
+                <li><a href="index.html#about" class="text-white hover:text-orange-300 transition">About</a></li>
+                <li><a href="index.html#services" class="text-white hover:text-orange-300 transition">Services</a></li>
+                <li><a href="index.html#product" class="text-white hover:text-orange-300 transition">Collections</a></li>
+                <li><a href="index.html#team" class="text-white hover:text-orange-300 transition">Craftsmanship</a></li>
+                <li class="relative group">
+                    <button class="text-white flex items-center space-x-1 focus:outline-none">
+                        <span>More</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-50">
+                        <a href="feedback.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-medium">Feedback</a>
                     </div>
                 </li>
-                <li><a href="product.html" class="hover:underline">details</a></li>
-                <li>  <a href="login.html" class="bg-orange-500 px-4 py-2 rounded-lg text-white hover:text-black transition ">login</a></li>
+                <li><a href="product.html" class="text-white hover:text-orange-300 transition">Details</a></li>
+                <li>
+                    <a href="login.html" class="bg-gradient-to-r from-orange-500 to-pink-500 px-6 py-2 rounded-full text-white font-medium hover:shadow-lg transition-all">
+                        Account
+                    </a>
+                </li>
             </ul>
+            
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
-  </div>
- </div>
-    <!-- feedback page -->
-    <div class="flex items-center justify-center min-h-screen bg-cover bg-center relative" style="background-image: url('./assest2/image/pic11.jpg');">
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black opacity-50"></div>
 
-        <!-- feedback Form Container -->
-        <div class="relative bg-white shadow-xl rounded-2xl grid justify-items-center py-10 w-full max-w-xl mx-auto px-6">
-            <h1 class="font-bold text-5xl py-5 text-center">feedback Form</h1>
-            <p class="font-bold text-5xl">what prevented you from complething your purchase today?</p>
-            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800  mt-8">Price was too high</button>
-            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800  mt-3">cost of shipping was to expensive </button>
-            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800  mt-3">There was lack payments</button>
-            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800  mt-3">I`m just researching right now</button>
-            <button class="bg-gray-200 text-black text-xl font-bold px-4 py-2 rounded-lg w-full hover:bg-gray-800  mt-3">Others</button>
-        </div>    
-        <script>
-            document.getElementById("dropdownButton").addEventListener("click", function () {
-              document.getElementById("dropdownMenu").classList.toggle("hidden");
+    <!-- Feedback Section -->
+    <div class="flex items-center justify-center min-h-screen bg-cover bg-center relative" style="background-image: url('./assest2/image/pic11.jpg');">
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-purple-900/70"></div>
+
+        <!-- Feedback Form Container -->
+        <div class="relative bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden w-full max-w-2xl mx-4 my-20 hover-scale transition-all">
+            <div class="p-10">
+                <div class="text-center mb-10">
+                    <h1 class="text-4xl font-bold mb-4 gradient-text">Your Feedback Matters</h1>
+                    <p class="text-lg text-gray-600">Help us improve your luxury perfume shopping experience</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">
+                    What prevented you from completing your purchase today?
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- Feedback Option 1 -->
+                    <button class="option-card w-full bg-white border border-gray-200 rounded-xl p-6 text-left flex items-center hover:border-orange-400">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-tag text-orange-500"></i>
+                        </div>
+                        <span class="text-lg font-medium text-gray-800">Price was higher than expected</span>
+                    </button>
+                    
+                    <!-- Feedback Option 2 -->
+                    <button class="option-card w-full bg-white border border-gray-200 rounded-xl p-6 text-left flex items-center hover:border-orange-400">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-truck text-blue-500"></i>
+                        </div>
+                        <span class="text-lg font-medium text-gray-800">Shipping costs were too expensive</span>
+                    </button>
+                    
+                    <!-- Feedback Option 3 -->
+                    <button class="option-card w-full bg-white border border-gray-200 rounded-xl p-6 text-left flex items-center hover:border-orange-400">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-credit-card text-purple-500"></i>
+                        </div>
+                        <span class="text-lg font-medium text-gray-800">Limited payment options available</span>
+                    </button>
+                    
+                    <!-- Feedback Option 4 -->
+                    <button class="option-card w-full bg-white border border-gray-200 rounded-xl p-6 text-left flex items-center hover:border-orange-400">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-search text-green-500"></i>
+                        </div>
+                        <span class="text-lg font-medium text-gray-800">I'm just researching options now</span>
+                    </button>
+                    
+                    <!-- Feedback Option 5 -->
+                    <button class="option-card w-full bg-white border border-gray-200 rounded-xl p-6 text-left flex items-center hover:border-orange-400">
+                        <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-ellipsis-h text-pink-500"></i>
+                        </div>
+                        <span class="text-lg font-medium text-gray-800">Other reason (please specify)</span>
+                    </button>
+                </div>
+                
+                <!-- Additional Comments -->
+                <div class="mt-8">
+                    <label class="block text-gray-700 font-medium mb-3">Any additional comments?</label>
+                    <textarea class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent" rows="4" placeholder="Your feedback helps us improve..."></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <button class="w-full mt-8 bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 rounded-full font-bold hover:shadow-lg transition-all">
+                    Submit Feedback <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+                
+                <p class="text-center text-sm text-gray-500 mt-6">
+                    We value your privacy. Your feedback will only be used to improve our services.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown menu toggle
+        document.getElementById("dropdownButton").addEventListener("click", function() {
+            document.getElementById("dropdownMenu").classList.toggle("hidden");
+        });
+
+        // Feedback option selection
+        document.querySelectorAll('.option-card').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons
+                document.querySelectorAll('.option-card').forEach(btn => {
+                    btn.classList.remove('border-orange-500', 'bg-orange-50');
+                });
+                // Add active state to clicked button
+                this.classList.add('border-orange-500', 'bg-orange-50');
             });
-          </script>   
-    
+        });
+    </script>
 </body>
 </html>
